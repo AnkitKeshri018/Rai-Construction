@@ -1,0 +1,331 @@
+import { useEffect, useState } from "react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const Contact = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    projectType: "",
+    message: ""
+  });
+  const { toast } = useToast();
+
+  useEffect(() => {
+    setIsVisible(true);
+    document.title = "Contact Us - Rai Construction Solutions";
+  }, []);
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Our Location",
+      details: ["123 Construction Avenue", "Building City, BC 12345", "United States"]
+    },
+    {
+      icon: Phone,
+      title: "Phone Numbers",
+      details: ["+1 (555) 123-4567", "+1 (555) 765-4321", "Toll Free: 1-800-RAI-CONST"]
+    },
+    {
+      icon: Mail,
+      title: "Email Addresses",
+      details: ["info@raiconstruction.com", "projects@raiconstruction.com", "support@raiconstruction.com"]
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"]
+    }
+  ];
+
+  const services = [
+    "BIM 3D Modeling",
+    "Construction Documents",
+    "Scan to BIM",
+    "3D Renders & Walkthroughs",
+    "Interior Designing",
+    "Quantity Take-Off",
+    "General Consultation"
+  ];
+
+  const projectTypes = [
+    "Residential",
+    "Commercial",
+    "Industrial",
+    "Renovation",
+    "New Construction",
+    "Mixed Use"
+  ];
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Please fill required fields",
+        description: "Name, email, and message are required.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Simulate form submission
+    toast({
+      title: "Message sent successfully!",
+      description: "We'll get back to you within 24 hours.",
+    });
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      service: "",
+      projectType: "",
+      message: ""
+    });
+  };
+
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <main className="pt-16">
+        {/* Hero Section */}
+        <section className="py-20 bg-gradient-hero text-white">
+          <div className="container mx-auto px-4">
+            <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
+                Let's <span className="text-accent">Connect</span>
+              </h1>
+              <p className="text-xl text-muted-light leading-relaxed">
+                Ready to start your project? Get in touch with our expert team for a free consultation 
+                and discover how we can bring your construction vision to life.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Info & Form */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div className={`space-y-8 transition-all duration-1000 delay-200 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gradient-construction mb-6">
+                    Get in Touch
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                    We're here to help you turn your construction dreams into reality. 
+                    Reach out to us through any of the channels below.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {contactInfo.map((info, index) => (
+                    <div key={index} className="construction-card group">
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-smooth">
+                          <info.icon className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h3 className="font-montserrat font-semibold text-foreground mb-2 group-hover:text-accent transition-smooth">
+                            {info.title}
+                          </h3>
+                          <div className="space-y-1">
+                            {info.details.map((detail, detailIndex) => (
+                              <p key={detailIndex} className="text-muted-foreground text-sm">
+                                {detail}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Map Placeholder */}
+                <div className="construction-card bg-muted-light/20 h-64 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <MapPin className="h-12 w-12 mx-auto mb-4 text-accent" />
+                    <p className="font-medium">Interactive Map</p>
+                    <p className="text-sm">Visit our office location</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Form */}
+              <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
+                <div className="construction-card">
+                  <h3 className="text-2xl font-montserrat font-bold text-gradient-construction mb-6">
+                    Send us a Message
+                  </h3>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Full Name *
+                        </label>
+                        <Input
+                          type="text"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange("name", e.target.value)}
+                          placeholder="Enter your full name"
+                          className="w-full"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Email Address *
+                        </label>
+                        <Input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          placeholder="Enter your email"
+                          className="w-full"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Phone Number
+                        </label>
+                        <Input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange("phone", e.target.value)}
+                          placeholder="Enter your phone number"
+                          className="w-full"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Company/Organization
+                        </label>
+                        <Input
+                          type="text"
+                          value={formData.company}
+                          onChange={(e) => handleInputChange("company", e.target.value)}
+                          placeholder="Enter company name"
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Service Interested In
+                        </label>
+                        <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select a service" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {services.map((service) => (
+                              <SelectItem key={service} value={service}>
+                                {service}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Project Type
+                        </label>
+                        <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select project type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {projectTypes.map((type) => (
+                              <SelectItem key={type} value={type}>
+                                {type}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Message *
+                      </label>
+                      <Textarea
+                        value={formData.message}
+                        onChange={(e) => handleInputChange("message", e.target.value)}
+                        placeholder="Tell us about your project requirements..."
+                        className="w-full h-32 resize-none"
+                        required
+                      />
+                    </div>
+
+                    <Button type="submit" className="w-full btn-construction text-lg py-3">
+                      Send Message <Send className="ml-2 h-5 w-5" />
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-steel text-white">
+          <div className="container mx-auto px-4">
+            <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-600 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
+              <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
+                Need Immediate Assistance?
+              </h2>
+              <p className="text-xl text-muted-light mb-8 leading-relaxed">
+                For urgent project inquiries or immediate consultation, call us directly. 
+                Our expert team is ready to help you get started right away.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="btn-construction text-lg px-8 py-4">
+                  <a href="tel:+15551234567">
+                    <Phone className="mr-2 h-5 w-5" /> Call Now: (555) 123-4567
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                  <a href="mailto:info@raiconstruction.com">
+                    <Mail className="mr-2 h-5 w-5" /> Email Us
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;
