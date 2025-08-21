@@ -311,7 +311,7 @@
 }
 
 .project-card {
-  @apply construction-card relative group overflow-hidden;
+  @apply construction-card relative overflow-hidden;
 }
 
 .btn-construction {

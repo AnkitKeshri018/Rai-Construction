@@ -71,7 +71,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`project-card transition-all duration-1000 ${
+              className={`project-card group transition-all duration-1000 ${
                 isVisible ? 'animate-fade-in-up' : 'opacity-0'
               }`}
               style={{ animationDelay: isVisible ? project.delay : '0ms' }}
