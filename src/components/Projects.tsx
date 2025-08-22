@@ -56,13 +56,19 @@ const Projects = () => {
     <section ref={sectionRef} className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-gradient-construction mb-6">
-            Some Of Our Popular Dream Projects
+            Some Of Our Popular{" "}
+            <span className="text-[#ff5457] bold">Dream</span> Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explore our portfolio of exceptional construction projects that showcase our expertise 
-            in delivering innovative solutions and architectural excellence.
+            Explore our portfolio of exceptional construction projects that
+            showcase our expertise in delivering innovative solutions and
+            architectural excellence.
           </p>
         </div>
 
@@ -72,9 +78,9 @@ const Projects = () => {
             <div
               key={index}
               className={`project-card group transition-all duration-1000 ${
-                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
-              style={{ animationDelay: isVisible ? project.delay : '0ms' }}
+              style={{ animationDelay: isVisible ? project.delay : "0ms" }}
             >
               {/* Project Image */}
               <div className="relative overflow-hidden rounded-lg mb-6">
@@ -83,18 +89,22 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-64 object-cover transition-smooth group-hover:scale-110"
                 />
-                
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-80 transition-all duration-500 flex items-center justify-center">
                   <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <ExternalLink className="h-8 w-8 mx-auto mb-2" />
-                    <p className="font-montserrat font-semibold">View Details</p>
+                    <p className="font-montserrat font-semibold">
+                      View Details
+                    </p>
                   </div>
                 </div>
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="text-xs font-inter font-medium text-white">{project.category}</span>
+                  <span className="text-xs font-inter font-medium text-white">
+                    {project.category}
+                  </span>
                 </div>
               </div>
 
@@ -106,10 +116,10 @@ const Projects = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 {/* Read More Link */}
                 <div className="pt-2">
-                  <Link 
+                  <Link
                     to="/projects"
                     className="inline-flex items-center text-accent font-inter font-medium hover:text-accent-light transition-smooth group"
                   >
@@ -126,8 +136,16 @@ const Projects = () => {
         </div>
 
         {/* CTA Section */}
-        <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-          <Button asChild size="lg" className="btn-construction text-lg px-8 py-4">
+        <div
+          className={`text-center transition-all duration-1000 delay-500 ${
+            isVisible ? "animate-scale-in" : "opacity-0"
+          }`}
+        >
+          <Button
+            asChild
+            size="lg"
+            className="btn-construction text-lg px-8 py-4"
+          >
             <Link to="/projects">
               View All Projects <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

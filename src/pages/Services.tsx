@@ -112,15 +112,20 @@ const Services = () => {
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-20 bg-primary text-white">
           <div className="container mx-auto px-4">
-            <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div
+              className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
+              }`}
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
-                Our <span className="text-accent">Expert Services</span>
+                Our <span className="text-[#ff5457]">Expert Services</span>
               </h1>
               <p className="text-xl text-muted-light leading-relaxed">
-                Comprehensive construction consultancy services designed to bring your projects 
-                to life with precision, innovation, and excellence.
+                Comprehensive construction consultancy services designed to
+                bring your projects to life with precision, innovation, and
+                excellence.
               </p>
             </div>
           </div>
@@ -131,17 +136,21 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <div className="space-y-20">
               {services.map((service, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`transition-all duration-1000 delay-${index * 200} ${
-                    isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                  }`}
+                  className={`transition-all duration-1000 delay-${
+                    index * 200
+                  } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
                 >
-                  <div className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                  }`}>
+                  <div
+                    className={`grid lg:grid-cols-2 gap-12 items-center ${
+                      index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                    }`}
+                  >
                     {/* Service Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                    <div
+                      className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}
+                    >
                       <div className="relative group">
                         <img
                           src={service.image}
@@ -153,11 +162,15 @@ const Services = () => {
                     </div>
 
                     {/* Service Content */}
-                    <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                    <div
+                      className={`space-y-6 ${
+                        index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                      }`}
+                    >
                       <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gradient-construction">
                         {service.title}
                       </h2>
-                      
+
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
@@ -169,9 +182,14 @@ const Services = () => {
                         </h3>
                         <div className="grid md:grid-cols-2 gap-3">
                           {service.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center space-x-3">
+                            <div
+                              key={featureIndex}
+                              className="flex items-center space-x-3"
+                            >
                               <Check className="h-5 w-5 text-accent flex-shrink-0" />
-                              <span className="text-muted-foreground">{feature}</span>
+                              <span className="text-muted-foreground">
+                                {feature}
+                              </span>
                             </div>
                           ))}
                         </div>
@@ -203,21 +221,35 @@ const Services = () => {
         {/* CTA Section */}
         <section className="py-20 bg-gradient-steel text-white">
           <div className="container mx-auto px-4">
-            <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-1000 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
+            <div
+              className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-1000 ${
+                isVisible ? "animate-scale-in" : "opacity-0"
+              }`}
+            >
               <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
                 Ready to Start Your Project?
               </h2>
               <p className="text-xl text-muted-light mb-8 leading-relaxed">
-                Let's discuss how our expert services can bring your construction vision to life 
-                with precision and innovation.
+                Let's discuss how our expert services can bring your
+                construction vision to life with precision and innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="btn-construction text-lg px-8 py-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="btn-construction text-lg px-8 py-4"
+                >
                   <Link to="/contact">
-                    Get Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
+                    Get Free Consultation{" "}
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
+                >
                   <Link to="/projects">View Our Work</Link>
                 </Button>
               </div>

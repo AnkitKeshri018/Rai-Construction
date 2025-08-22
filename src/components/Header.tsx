@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Building2, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -16,21 +18,33 @@ const Header = () => {
     { name: "Contact Us", href: "/contact" },
   ];
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const isActive = (path: string) => location.pathname === path;
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        location.pathname === "/"
+          ? scrolled
+            ? "bg-[#3d3d3d] shadow-lg"
+            : "bg-transparent"
+          : "bg-[#3d3d3d] shadow-lg"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="flex items-center space-x-2 text-xl font-montserrat font-bold text-gradient-construction hover-scale"
+          <Link
+            to="/"
+            className="flex items-center space-x-2 text-xl font-bold text-white hover:scale-105 transition-transform"
           >
-            <Building2 className="h-8 w-8 text-primary" />
-            <span>Rai Construction Solutions</span>
+            <Building2 className="h-8 w-8 text-[#ff5467]" />
+            <span>Rai Construction</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,20 +53,25 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`font-inter font-medium transition-smooth hover:text-accent ${
+                className={`relative font-medium transition-colors ${
                   isActive(item.href)
-                    ? "text-accent border-b-2 border-accent"
-                    : "text-foreground hover:text-accent"
+                    ? "text-[#ff5467]"
+                    : "text-white hover:text-[#ff5467]"
                 }`}
               >
                 {item.name}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-[#ff5467] transition-all duration-300 ${
+                    isActive(item.href) ? "w-full" : "w-0 hover:w-full"
+                  }`}
+                ></span>
               </Link>
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button asChild className="btn-construction">
+            <Button className="bg-[#ff5467] text-white hover:bg-[#ff6f7f]">
               <Link to="/contact">Get Quote</Link>
             </Button>
           </div>
@@ -60,7 +79,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-smooth"
+            className="lg:hidden text-white"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -72,28 +91,26 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-construction animate-slide-up">
-            <nav className="flex flex-col space-y-4 p-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-inter font-medium py-2 transition-smooth ${
-                    isActive(item.href)
-                      ? "text-accent border-l-4 border-accent pl-4"
-                      : "text-foreground hover:text-accent hover:pl-2"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Button asChild className="btn-construction mt-4">
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                  Get Quote
-                </Link>
-              </Button>
-            </nav>
+          <div className="lg:hidden bg-[#3d3d3d] p-4 space-y-4 animate-fade-in">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`block font-medium ${
+                  isActive(item.href)
+                    ? "text-[#ff5467]"
+                    : "text-white hover:text-[#ff5467]"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button className="bg-[#ff5467] text-white w-full hover:bg-[#ff6f7f]">
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                Get Quote
+              </Link>
+            </Button>
           </div>
         )}
       </div>

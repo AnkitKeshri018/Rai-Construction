@@ -5,6 +5,8 @@ import Vision from "@/components/Vision";
 import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
+import BlogSection from "./BlogsSection";
 
 const Index = () => {
   return (
@@ -12,10 +14,13 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Services />
+        <AboutSection/>
         <Vision />
+        <Services />
         <Projects />
         <Testimonials />
+        <BlogSection/>
+
       </main>
       <Footer />
     </div>

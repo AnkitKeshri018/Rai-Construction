@@ -104,19 +104,24 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-20 bg-primary text-white">
           <div className="container mx-auto px-4">
-            <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div
+              className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
+              }`}
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
-                Let's <span className="text-accent">Connect</span>
+                Let's <span className="text-[#ff5457]">Connect</span>
               </h1>
               <p className="text-xl text-muted-light leading-relaxed">
-                Ready to start your project? Get in touch with our expert team for a free consultation 
-                and discover how we can bring your construction vision to life.
+                Ready to start your project? Get in touch with our expert team
+                for a free consultation and discover how we can bring your
+                construction vision to life.
               </p>
             </div>
           </div>
@@ -127,14 +132,18 @@ const Contact = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Information */}
-              <div className={`space-y-8 transition-all duration-1000 delay-200 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
+              <div
+                className={`space-y-8 transition-all duration-1000 delay-200 ${
+                  isVisible ? "animate-slide-in-left" : "opacity-0"
+                }`}
+              >
                 <div>
                   <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gradient-construction mb-6">
                     Get in Touch
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                    We're here to help you turn your construction dreams into reality. 
-                    Reach out to us through any of the channels below.
+                    We're here to help you turn your construction dreams into
+                    reality. Reach out to us through any of the channels below.
                   </p>
                 </div>
 
@@ -151,7 +160,10 @@ const Contact = () => {
                           </h3>
                           <div className="space-y-1">
                             {info.details.map((detail, detailIndex) => (
-                              <p key={detailIndex} className="text-muted-foreground text-sm">
+                              <p
+                                key={detailIndex}
+                                className="text-muted-foreground text-sm"
+                              >
                                 {detail}
                               </p>
                             ))}
@@ -173,12 +185,16 @@ const Contact = () => {
               </div>
 
               {/* Contact Form */}
-              <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
+              <div
+                className={`transition-all duration-1000 delay-400 ${
+                  isVisible ? "animate-slide-in-right" : "opacity-0"
+                }`}
+              >
                 <div className="construction-card">
                   <h3 className="text-2xl font-montserrat font-bold text-gradient-construction mb-6">
                     Send us a Message
                   </h3>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
@@ -188,7 +204,9 @@ const Contact = () => {
                         <Input
                           type="text"
                           value={formData.name}
-                          onChange={(e) => handleInputChange("name", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("name", e.target.value)
+                          }
                           placeholder="Enter your full name"
                           className="w-full"
                           required
@@ -201,7 +219,9 @@ const Contact = () => {
                         <Input
                           type="email"
                           value={formData.email}
-                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("email", e.target.value)
+                          }
                           placeholder="Enter your email"
                           className="w-full"
                           required
@@ -217,7 +237,9 @@ const Contact = () => {
                         <Input
                           type="tel"
                           value={formData.phone}
-                          onChange={(e) => handleInputChange("phone", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("phone", e.target.value)
+                          }
                           placeholder="Enter your phone number"
                           className="w-full"
                         />
@@ -229,7 +251,9 @@ const Contact = () => {
                         <Input
                           type="text"
                           value={formData.company}
-                          onChange={(e) => handleInputChange("company", e.target.value)}
+                          onChange={(e) =>
+                            handleInputChange("company", e.target.value)
+                          }
                           placeholder="Enter company name"
                           className="w-full"
                         />
@@ -241,7 +265,12 @@ const Contact = () => {
                         <label className="block text-sm font-medium text-foreground mb-2">
                           Service Interested In
                         </label>
-                        <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
+                        <Select
+                          value={formData.service}
+                          onValueChange={(value) =>
+                            handleInputChange("service", value)
+                          }
+                        >
                           <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
@@ -258,7 +287,12 @@ const Contact = () => {
                         <label className="block text-sm font-medium text-foreground mb-2">
                           Project Type
                         </label>
-                        <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+                        <Select
+                          value={formData.projectType}
+                          onValueChange={(value) =>
+                            handleInputChange("projectType", value)
+                          }
+                        >
                           <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
@@ -279,15 +313,20 @@ const Contact = () => {
                       </label>
                       <Textarea
                         value={formData.message}
-                        onChange={(e) => handleInputChange("message", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("message", e.target.value)
+                        }
                         placeholder="Tell us about your project requirements..."
                         className="w-full h-32 resize-none"
                         required
                       />
                     </div>
 
-                    <Button type="submit" className="w-full btn-construction text-lg py-3">
-                      Send Message <Send className="ml-2 h-5 w-5" />
+                    <Button
+                      type="submit"
+                      className="w-full bg-[#ff5457] text-lg py-3"
+                    >
+                      Submit <Send className="ml-2 h-5 w-5" />
                     </Button>
                   </form>
                 </div>
@@ -299,21 +338,35 @@ const Contact = () => {
         {/* CTA Section */}
         <section className="py-20 bg-gradient-steel text-white">
           <div className="container mx-auto px-4">
-            <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-600 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
+            <div
+              className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-600 ${
+                isVisible ? "animate-scale-in" : "opacity-0"
+              }`}
+            >
               <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
                 Need Immediate Assistance?
               </h2>
               <p className="text-xl text-muted-light mb-8 leading-relaxed">
-                For urgent project inquiries or immediate consultation, call us directly. 
-                Our expert team is ready to help you get started right away.
+                For urgent project inquiries or immediate consultation, call us
+                directly. Our expert team is ready to help you get started right
+                away.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="btn-construction text-lg px-8 py-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="btn-construction text-lg px-8 py-4"
+                >
                   <a href="tel:+15551234567">
                     <Phone className="mr-2 h-5 w-5" /> Call Now: (555) 123-4567
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
+                >
                   <a href="mailto:info@raiconstruction.com">
                     <Mail className="mr-2 h-5 w-5" /> Email Us
                   </a>

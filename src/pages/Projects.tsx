@@ -23,37 +23,94 @@ const Projects = () => {
   const projects = [
     {
       title: "Moonstone Villa",
-      description: "A stunning modern architectural masterpiece blending contemporary aesthetics with natural textures. This luxury residential project showcases our expertise in creating sophisticated living spaces.",
+      description:
+        "A stunning modern architectural masterpiece blending contemporary aesthetics with natural textures. This luxury residential project showcases our expertise in creating sophisticated living spaces.",
       image: projectMoonstoneVilla,
       category: "Luxury Residential",
       location: "Beverly Hills, CA",
       year: "2023",
       client: "Private Client",
-      services: ["BIM 3D Modeling", "3D Renders & Walkthroughs", "Interior Design"],
-      details: "This 8,500 sq ft luxury villa features cutting-edge design elements, sustainable materials, and smart home integration. Our comprehensive BIM modeling enabled seamless coordination between all trades."
+      services: [
+        "BIM 3D Modeling",
+        "3D Renders & Walkthroughs",
+        "Interior Design",
+      ],
+      details:
+        "This 8,500 sq ft luxury villa features cutting-edge design elements, sustainable materials, and smart home integration. Our comprehensive BIM modeling enabled seamless coordination between all trades.",
     },
     {
-      title: "Tranquil Crest", 
-      description: "A blend of modern sophistication with classical charm, featuring arched windows and ornamental patterns. This heritage-inspired project demonstrates our versatility in architectural styles.",
+      title: "Tranquil Crest",
+      description:
+        "A blend of modern sophistication with classical charm, featuring arched windows and ornamental patterns. This heritage-inspired project demonstrates our versatility in architectural styles.",
       image: projectTranquilCrest,
       category: "Heritage Modern",
       location: "Charleston, SC",
       year: "2022",
       client: "Heritage Developers",
       services: ["Construction Documents", "Quantity Take-Off", "Scan to BIM"],
-      details: "A 12,000 sq ft residential complex that honors traditional architecture while incorporating modern amenities. Our detailed construction documents ensured historical accuracy and compliance."
+      details:
+        "A 12,000 sq ft residential complex that honors traditional architecture while incorporating modern amenities. Our detailed construction documents ensured historical accuracy and compliance.",
     },
     {
       title: "Lilyfield House",
-      description: "A modern townhouse with a clean geometric façade, integrating natural wood and glass elements. This urban project showcases sustainable design and contemporary living.",
+      description:
+        "A modern townhouse with a clean geometric façade, integrating natural wood and glass elements. This urban project showcases sustainable design and contemporary living.",
       image: projectLilyfieldHouse,
       category: "Urban Contemporary",
       location: "Portland, OR",
       year: "2023",
       client: "Urban Living Corp",
       services: ["BIM 3D Modeling", "Interior Design", "3D Renders"],
-      details: "A 4,200 sq ft eco-friendly townhouse featuring energy-efficient systems, green building materials, and innovative space planning solutions for modern urban families."
-    }
+      details:
+        "A 4,200 sq ft eco-friendly townhouse featuring energy-efficient systems, green building materials, and innovative space planning solutions for modern urban families.",
+    },
+    {
+      title: "The Oakridge Enclave",
+      description:
+        "A contemporary residential complex that blends simplicity, functionality, and elegance, featuring natural materials and open layouts for modern living.",
+      image: projectMoonstoneVilla, // Update this variable to your actual image import
+      category: "Residential Modern",
+      location: "Austin, TX",
+      year: "2024",
+      client: "Oakridge Developers",
+      services: [
+        "Architectural Design",
+        "Sustainable Planning",
+        "3D Visualization",
+      ],
+      details:
+        "The Oakridge Enclave is a modern residential community designed with a focus on symmetry, natural materials like brick and wood, and ample green spaces. It combines energy-efficient systems with contemporary aesthetics to offer a serene lifestyle.",
+    },
+    {
+      title: "Verdant Vista",
+      description:
+        "A sophisticated urban building with balanced design and expansive windows, offering a perfect blend of functionality and aesthetic appeal.",
+      image: projectMoonstoneVilla, // Update this variable to your actual image import
+      category: "Urban Architecture",
+      location: "Seattle, WA",
+      year: "2023",
+      client: "Vista Properties",
+      services: [
+        "Urban Design",
+        "Concept Development",
+        "Interior Layout Planning",
+      ],
+      details:
+        "Verdant Vista features a minimalist façade with contrasting materials, designed to maximize natural light and create a serene yet vibrant environment for mixed-use functionality.",
+    },
+    {
+      title: "Sunset Ridge Residence",
+      description:
+        "A bold architectural masterpiece with an angular layout and striking color palette, combining openness and privacy in a lakeside setting.",
+      image: projectMoonstoneVilla, // Update this variable to your actual image import
+      category: "Luxury Residential",
+      location: "Lake Tahoe, CA",
+      year: "2024",
+      client: "Sunset Ridge Estates",
+      services: ["Custom Home Design", "3D Rendering", "Landscape Integration"],
+      details:
+        "Sunset Ridge Residence is designed with an innovative courtyard-style layout, arched windows, and pergolas to enhance outdoor living. Its vibrant color scheme and lakeside views make it a unique blend of modern elegance and natural beauty.",
+    },
   ];
 
   const filteredProjects = selectedCategory === "All" 
@@ -65,39 +122,21 @@ const Projects = () => {
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-hero text-white">
+        <section className="py-20 bg-primary text-white">
           <div className="container mx-auto px-4">
-            <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <div
+              className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
+                isVisible ? "animate-fade-in-up" : "opacity-0"
+              }`}
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
-                Our <span className="text-accent">Project Portfolio</span>
+                Our <span className="text-[#ff5457]">Project Portfolio</span>
               </h1>
               <p className="text-xl text-muted-light leading-relaxed">
-                Discover our exceptional construction projects that showcase innovation, 
-                craftsmanship, and architectural excellence across various sectors.
+                Discover our exceptional construction projects that showcase
+                innovation, craftsmanship, and architectural excellence across
+                various sectors.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Project Categories */}
-        <section className="py-12 bg-muted-light/10">
-          <div className="container mx-auto px-4">
-            <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <div className="flex flex-wrap justify-center gap-4">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-6 py-2 rounded-full font-inter font-medium transition-smooth ${
-                      selectedCategory === category
-                        ? "bg-accent text-white shadow-accent"
-                        : "bg-white text-muted-foreground hover:text-accent hover:shadow-soft border border-border"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
             </div>
           </div>
         </section>
@@ -107,17 +146,21 @@ const Projects = () => {
           <div className="container mx-auto px-4">
             <div className="space-y-20">
               {filteredProjects.map((project, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`transition-all duration-1000 delay-${index * 200} ${
-                    isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                  }`}
+                  className={`transition-all duration-1000 delay-${
+                    index * 200
+                  } ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
                 >
-                  <div className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                  }`}>
+                  <div
+                    className={`grid lg:grid-cols-2 gap-12 items-center ${
+                      index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                    }`}
+                  >
                     {/* Project Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                    <div
+                      className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}
+                    >
                       <div className="relative group">
                         <img
                           src={project.image}
@@ -125,21 +168,27 @@ const Projects = () => {
                           className="w-full h-96 object-cover rounded-xl shadow-construction group-hover:shadow-accent transition-smooth"
                         />
                         <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-500"></div>
-                        
+
                         {/* Category Badge */}
                         <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                          <span className="text-sm font-inter font-medium text-white">{project.category}</span>
+                          <span className="text-sm font-inter font-medium text-white">
+                            {project.category}
+                          </span>
                         </div>
                       </div>
                     </div>
 
                     {/* Project Content */}
-                    <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                    <div
+                      className={`space-y-6 ${
+                        index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                      }`}
+                    >
                       <div>
                         <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gradient-construction mb-4">
                           {project.title}
                         </h2>
-                        
+
                         {/* Project Meta */}
                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
                           <div className="flex items-center space-x-2">
@@ -156,7 +205,7 @@ const Projects = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {project.description}
                       </p>
@@ -184,7 +233,8 @@ const Projects = () => {
 
                       <Button asChild className="btn-construction">
                         <Link to="/contact">
-                          Start Similar Project <ArrowRight className="ml-2 h-4 w-4" />
+                          Start Similar Project{" "}
+                          <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     </div>
@@ -198,21 +248,34 @@ const Projects = () => {
         {/* CTA Section */}
         <section className="py-20 bg-gradient-steel text-white">
           <div className="container mx-auto px-4">
-            <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-1000 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
+            <div
+              className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-1000 ${
+                isVisible ? "animate-scale-in" : "opacity-0"
+              }`}
+            >
               <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
                 Ready to Create Your Dream Project?
               </h2>
               <p className="text-xl text-muted-light mb-8 leading-relaxed">
-                Let's collaborate to bring your vision to life with the same level of excellence 
-                and innovation showcased in our portfolio.
+                Let's collaborate to bring your vision to life with the same
+                level of excellence and innovation showcased in our portfolio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="btn-construction text-lg px-8 py-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="btn-construction text-lg px-8 py-4"
+                >
                   <Link to="/contact">
                     Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="btn-outline-construction text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
+                >
                   <Link to="/services">Explore Services</Link>
                 </Button>
               </div>

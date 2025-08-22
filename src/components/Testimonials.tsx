@@ -33,60 +33,77 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Project Manager",
-      company: "Modern Homes Ltd",
+      name: "A. Mehta",
+      role: "",
+      company: "",
       rating: 5,
-      content: "Rai Construction Solutions transformed our vision into reality with exceptional precision. Their BIM modeling and 3D visualizations helped us identify potential issues before construction, saving both time and costs.",
-      delay: "0ms"
+      content:
+        "Rai Construction Solutions turned our dream home into reality! From the initial 3D modeling to the final execution, their team ensured every detail was perfect. The stunning renders helped us visualize everything in advance, making the entire process seamless. Highly professional and creative!",
+      delay: "0ms",
     },
     {
-      name: "Michael Chen", 
-      role: "Architect",
-      company: "Chen Architecture Studio",
+      name: "V. Sharma",
+      role: "",
+      company: "",
       rating: 5,
-      content: "The quality of construction documents and technical drawings provided by Rai Construction Solutions is outstanding. Their attention to detail and compliance standards made our approval process seamless.",
-      delay: "200ms"
+      content:
+        "We needed a modern yet functional design for our townhouse project, and Rai Construction Solutions delivered beyond our expectations. Their quantity take-off services ensured we stayed within budget while their 3D walkthroughs helped us make informed decisions. Highly recommended!",
+      delay: "200ms",
     },
     {
-      name: "Emma Rodriguez",
-      role: "Developer",
-      company: "Urban Development Group",
+      name: "S. Roy",
+      role: "",
+      company: "",
       rating: 5,
-      content: "Their Scan to BIM services were invaluable for our renovation project. The accuracy of the as-built models and the speed of delivery exceeded our expectations. Highly recommended for any construction consultancy needs.",
-      delay: "400ms"
-    }
+      content:
+        "The expertise and attention to detail shown by Rai Construction Solutions are unmatched. Their architectural planning, BIM services, and interior design suggestions were exceptional. Tranquil Crest wouldn’t have been the same without their innovative approach!",
+      delay: "400ms",
+    },
+    {
+      name: "R. Kapoor",
+      role: "",
+      company: "",
+      rating: 5,
+      content:
+        "What sets Rai Construction Solutions apart is their ability to blend creativity with technical precision. Their Scan to BIM services saved us a lot of time in renovation, and their consultancy ensured smooth execution. A fantastic experience overall!",
+      delay: "600ms",
+    },
   ];
 
   return (
     <section ref={sectionRef} className="py-20 bg-muted-light/10">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-gradient-construction mb-6">
-            What Our Clients Say
+            What Our <span className="text-[#ff5457] bold">Happy</span> Clients
+            Say
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied clients have to say 
-            about their experience working with Rai Construction Solutions.
+            Don't just take our word for it. Here's what our satisfied clients
+            have to say about their experience working with Rai Construction
+            Solutions.
           </p>
         </div>
 
         {/* Testimonials Carousel */}
         <div className="max-w-4xl mx-auto relative">
           <div className="overflow-hidden">
-            <div 
+            <div
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
             >
               {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="w-full flex-shrink-0 px-4"
-                >
-                  <div className={`construction-card text-center max-w-3xl mx-auto bg-white transition-all duration-1000 ${
-                    isVisible ? 'animate-scale-in' : 'opacity-0'
-                  }`}>
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <div
+                    className={`construction-card text-center max-w-3xl mx-auto bg-white transition-all duration-1000 ${
+                      isVisible ? "animate-scale-in" : "opacity-0"
+                    }`}
+                  >
                     {/* Quote Icon */}
                     <div className="mb-6">
                       <Quote className="h-12 w-12 text-accent mx-auto opacity-50" />
@@ -95,7 +112,10 @@ const Testimonials = () => {
                     {/* Rating */}
                     <div className="flex justify-center space-x-1 mb-6">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                        <Star
+                          key={i}
+                          className="h-5 w-5 fill-accent text-accent"
+                        />
                       ))}
                     </div>
 
@@ -109,9 +129,19 @@ const Testimonials = () => {
                       <h4 className="text-xl font-montserrat font-semibold text-foreground">
                         {testimonial.name}
                       </h4>
-                      <p className="text-muted-foreground">
-                        {testimonial.role} at <span className="text-accent font-medium">{testimonial.company}</span>
-                      </p>
+                      {(testimonial.role || testimonial.company) && (
+                        <p className="text-muted-foreground">
+                          {testimonial.role}{" "}
+                          {testimonial.company && (
+                            <>
+                              at{" "}
+                              <span className="text-accent font-medium">
+                                {testimonial.company}
+                              </span>
+                            </>
+                          )}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -136,13 +166,23 @@ const Testimonials = () => {
 
           {/* Navigation Arrows */}
           <button
-            onClick={() => setActiveTestimonial(activeTestimonial === 0 ? testimonials.length - 1 : activeTestimonial - 1)}
+            onClick={() =>
+              setActiveTestimonial(
+                activeTestimonial === 0
+                  ? testimonials.length - 1
+                  : activeTestimonial - 1
+              )
+            }
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-2 rounded-full bg-white shadow-construction hover:shadow-accent transition-smooth hover-scale"
           >
             ←
           </button>
           <button
-            onClick={() => setActiveTestimonial((activeTestimonial + 1) % testimonials.length)}
+            onClick={() =>
+              setActiveTestimonial(
+                (activeTestimonial + 1) % testimonials.length
+              )
+            }
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-2 rounded-full bg-white shadow-construction hover:shadow-accent transition-smooth hover-scale"
           >
             →
@@ -150,13 +190,17 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Section */}
-        <div className={`mt-16 transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div
+          className={`mt-16 transition-all duration-1000 delay-300 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { label: "Client Satisfaction", value: "98%" },
               { label: "Projects Delivered", value: "500+" },
               { label: "Expert Team Members", value: "25+" },
-              { label: "Years of Excellence", value: "15+" }
+              { label: "Years of Excellence", value: "15+" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl md:text-3xl font-montserrat font-bold text-accent mb-2">

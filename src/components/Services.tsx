@@ -74,13 +74,18 @@ const Services = () => {
     <section ref={sectionRef} className="py-20 bg-muted-light/20">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-gradient-construction mb-6">
-            Our Expert Services
+            Our <span className="text-[#ff5457] bold">Expert</span> Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We offer a comprehensive range of specialized services tailored to meet every project requirement. 
-            Our expertise spans various domains, ensuring seamless execution to the highest standards.
+            We offer a comprehensive range of specialized services tailored to
+            meet every project requirement. Our expertise spans various domains,
+            ensuring seamless execution to the highest standards.
           </p>
         </div>
 
@@ -90,9 +95,9 @@ const Services = () => {
             <div
               key={index}
               className={`service-card group transition-all duration-1000 ${
-                isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
-              style={{ animationDelay: isVisible ? service.delay : '0ms' }}
+              style={{ animationDelay: isVisible ? service.delay : "0ms" }}
             >
               {/* Service Image */}
               <div className="relative overflow-hidden rounded-lg mb-6">
@@ -102,7 +107,7 @@ const Services = () => {
                   className="w-full h-48 object-cover transition-smooth group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                
+
                 {/* Hover overlay with icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="bg-white/90 p-3 rounded-full shadow-accent">
@@ -119,10 +124,10 @@ const Services = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-                
+
                 {/* Read More Link */}
                 <div className="pt-2">
-                  <Link 
+                  <Link
                     to="/services"
                     className="inline-flex items-center text-accent font-inter font-medium hover:text-accent-light transition-smooth group"
                   >
@@ -136,15 +141,6 @@ const Services = () => {
               <div className="absolute top-4 right-4 w-8 h-8 bg-accent/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
-          <Button asChild size="lg" className="btn-construction text-lg px-8 py-4">
-            <Link to="/services">
-              View All Services <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
