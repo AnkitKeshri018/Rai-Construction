@@ -108,12 +108,14 @@ const Contact = () => {
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
+        {/* Hero Section */}
         <section className="py-20 bg-primary text-white">
           <div className="container mx-auto px-4">
             <div
-              className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
+              className={`max-w-4xl mx-auto text-center ${
                 isVisible ? "animate-fade-in-up" : "opacity-0"
               }`}
+              style={{ willChange: "opacity, transform" }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
                 Let's <span className="text-[#ff5457]">Connect</span>
@@ -152,10 +154,10 @@ const Contact = () => {
                     <div key={index} className="construction-card group">
                       <div className="flex items-start space-x-4">
                         <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-smooth">
-                          <info.icon className="h-6 w-6 text-accent" />
+                          <info.icon className="h-6 w-6 text-[#fd5457]" />
                         </div>
                         <div>
-                          <h3 className="font-montserrat font-semibold text-foreground mb-2 group-hover:text-accent transition-smooth">
+                          <h3 className="font-montserrat font-semibold text-foreground mb-2 group-hover:text-[#fd5457] transition-smooth">
                             {info.title}
                           </h3>
                           <div className="space-y-1">
@@ -176,7 +178,7 @@ const Contact = () => {
 
                 {/* Map Placeholder */}
                 <div className="construction-card bg-muted-light/20 h-64 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
+                  <div className="text-center text-[#fd5457]">
                     <MapPin className="h-12 w-12 mx-auto mb-4 text-accent" />
                     <p className="font-medium">Interactive Map</p>
                     <p className="text-sm">Visit our office location</p>
@@ -336,7 +338,7 @@ const Contact = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-steel text-white">
+        <section className="py-20 bg-[#3d3d3d] text-white">
           <div className="container mx-auto px-4">
             <div
               className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-600 ${
@@ -355,7 +357,7 @@ const Contact = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="btn-construction text-lg px-8 py-4"
+                  className="bg-[#fd5457] text-lg px-8 py-4"
                 >
                   <a href="tel:+15551234567">
                     <Phone className="mr-2 h-5 w-5" /> Call Now: (555) 123-4567

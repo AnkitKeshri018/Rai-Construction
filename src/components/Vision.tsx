@@ -44,23 +44,23 @@ const Vision = () => {
             }`}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold mb-6">
-              Our <span className="text-accent">Vision</span>
+              Our <span className="text-[#ff5457]">Vision</span>
             </h2>
-            <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-accent-light mb-8">
+            <h3 className="text-xl md:text-2xl font-montserrat font-semibold text-[#ff5457] mb-8">
               Revolutionizing Construction with Innovation & Technology
             </h3>
 
             <p className="text-lg leading-relaxed mb-6">
               At{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 Rai Construction Solutions
               </span>
               , our vision is to{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 revolutionize the construction industry
               </span>{" "}
               by providing{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 innovative, technology-driven solutions
               </span>{" "}
               that bridge the gap between design and execution.
@@ -68,7 +68,7 @@ const Vision = () => {
 
             <p className="text-lg leading-relaxed mb-8">
               We aim to be a{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 one-stop consultancy partner
               </span>
               , empowering architects, contractors, and developers with
@@ -83,7 +83,7 @@ const Vision = () => {
                   className="flex items-center space-x-3 transition-all duration-700 hover:translate-x-2"
                 >
                   <div className="p-2 bg-accent/20 rounded-full">
-                    <feature.icon className="h-5 w-5 text-accent" />
+                    <feature.icon className="h-5 w-5 text-[#ff5457]" />
                   </div>
                   <span className="font-montserrat font-medium text-base">
                     {feature.label}
@@ -95,11 +95,11 @@ const Vision = () => {
             {/* Closing Note */}
             <p className="text-lg leading-relaxed mb-4">
               We envision a future where every project is executed{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 efficiently, clearly, and creatively
               </span>
               —transforming ideas into reality with{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 precision and excellence
               </span>
               .
@@ -107,11 +107,11 @@ const Vision = () => {
 
             <p className="text-base leading-relaxed">
               Our commitment is to{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 innovation, quality, and client satisfaction
               </span>
               . We ensure every project benefits from{" "}
-              <span className="text-accent font-semibold">
+              <span className="text-[#ff5457] font-semibold">
                 smarter designs, optimized resources, and seamless execution
               </span>
               .
@@ -126,7 +126,7 @@ const Vision = () => {
           >
             <div className="relative">
               <img
-                src={vision}// replace with your image path
+                src={vision} // replace with your image path
                 alt="Vision"
                 className="rounded-2xl shadow-lg border border-white/20 object-cover w-full h-[500px]"
               />

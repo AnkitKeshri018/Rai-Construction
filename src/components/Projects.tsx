@@ -53,7 +53,7 @@ const Projects = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-background">
+    <section ref={sectionRef} className="py-12 bg-background ">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div
@@ -94,14 +94,16 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-80 transition-all duration-500 flex items-center justify-center">
                   <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <ExternalLink className="h-8 w-8 mx-auto mb-2" />
-                    <p className="font-montserrat font-semibold">
-                      View Details
-                    </p>
+                    <Link to="/projects">
+                      <p className="font-montserrat font-semibold">
+                        View Details
+                      </p>
+                    </Link>
                   </div>
                 </div>
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                <div className="absolute top-4 left-4 bg-[#ff5457] backdrop-blur-sm px-3 py-1 rounded-full">
                   <span className="text-xs font-inter font-medium text-white">
                     {project.category}
                   </span>
@@ -121,7 +123,7 @@ const Projects = () => {
                 <div className="pt-2">
                   <Link
                     to="/projects"
-                    className="inline-flex items-center text-accent font-inter font-medium hover:text-accent-light transition-smooth group"
+                    className="inline-flex items-center text-[#ff5457] font-inter font-medium hover:text-accent-light transition-smooth group"
                   >
                     Read More
                     <ArrowRight className="ml-2 h-4 w-4 transition-smooth group-hover:translate-x-1" />
@@ -144,7 +146,7 @@ const Projects = () => {
           <Button
             asChild
             size="lg"
-            className="btn-construction text-lg px-8 py-4"
+            className="bg-[#3d3d3d] hover:bg-[#ff5457] text-lg px-8 py-4"
           >
             <Link to="/projects">
               View All Projects <ArrowRight className="ml-2 h-5 w-5" />

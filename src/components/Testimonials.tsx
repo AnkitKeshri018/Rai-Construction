@@ -106,7 +106,7 @@ const Testimonials = () => {
                   >
                     {/* Quote Icon */}
                     <div className="mb-6">
-                      <Quote className="h-12 w-12 text-accent mx-auto opacity-50" />
+                      <Quote className="h-12 w-12 text-[#ff5457] mx-auto opacity-50" />
                     </div>
 
                     {/* Rating */}
@@ -114,7 +114,7 @@ const Testimonials = () => {
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star
                           key={i}
-                          className="h-5 w-5 fill-accent text-accent"
+                          className="h-5 w-5 fill-[#ff5457] text-[#ff5457]"
                         />
                       ))}
                     </div>
@@ -135,7 +135,7 @@ const Testimonials = () => {
                           {testimonial.company && (
                             <>
                               at{" "}
-                              <span className="text-accent font-medium">
+                              <span className="text-[#ff5457] font-medium">
                                 {testimonial.company}
                               </span>
                             </>
@@ -157,7 +157,7 @@ const Testimonials = () => {
                 onClick={() => setActiveTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === activeTestimonial
-                    ? "bg-accent shadow-accent"
+                    ? "bg-[#ff5457] shadow-[#ff5457]"
                     : "bg-muted hover:bg-muted-foreground/50"
                 }`}
               />
@@ -173,7 +173,7 @@ const Testimonials = () => {
                   : activeTestimonial - 1
               )
             }
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-2 rounded-full bg-white shadow-construction hover:shadow-accent transition-smooth hover-scale"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-2 rounded-full bg-white shadow-construction hover:shadow-[#ff5457] transition-smooth hover-scale"
           >
             ←
           </button>
@@ -183,7 +183,7 @@ const Testimonials = () => {
                 (activeTestimonial + 1) % testimonials.length
               )
             }
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-2 rounded-full bg-white shadow-construction hover:shadow-accent transition-smooth hover-scale"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-2 rounded-full bg-white shadow-construction hover:shadow-[#ff5457] transition-smooth hover-scale"
           >
             →
           </button>
@@ -203,7 +203,7 @@ const Testimonials = () => {
               { label: "Years of Excellence", value: "15+" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-montserrat font-bold text-accent mb-2">
+                <div className="text-2xl md:text-3xl font-montserrat font-bold text-[#ff5457] mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground font-inter">

@@ -67,7 +67,7 @@ const AboutSection = () => {
             style={{ animationDelay: "0.2s" }}
           >
             Welcome to{" "}
-            <span className="text-4xl md:text-5xl bg-gradient-to-r from-[#ff5457] via-orange-500 to-[#ff5457] bg-clip-text text-transparent animate-gradient-move hover:brightness-125 transition duration-300">
+            <span className="text-4xl md:text-5xl bg-[#ff5457] bg-clip-text text-transparent animate-gradient-move hover:brightness-125 transition duration-300">
               Rai Construction Solutions
             </span>
           </h2>
@@ -141,7 +141,7 @@ const AboutSection = () => {
         <Button
           asChild
           size="lg"
-          className="px-8 py-4 flex items-center gap-2 hover:scale-110 hover:shadow-lg hover:shadow-[#ff5457]/40 transition-transform duration-300 ease-in-out"
+          className="px-8 py-4 flex items-center gap-2 hover:scale-110 hover:shadow-lg hover:bg-[#fd5457] transition-transform duration-300 ease-in-out"
         >
           <Link to="/services">
             Our Services <ArrowRight className="w-4 h-4" />

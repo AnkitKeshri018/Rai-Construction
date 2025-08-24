@@ -92,54 +92,56 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className={`service-card group transition-all duration-1000 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: isVisible ? service.delay : "0ms" }}
-            >
-              {/* Service Image */}
-              <div className="relative overflow-hidden rounded-lg mb-6">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-48 object-cover transition-smooth group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+            <Link to="/services">
+              <div
+                key={index}
+                className={`service-card group transition-all duration-1000 ${
+                  isVisible ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: isVisible ? service.delay : "0ms" }}
+              >
+                {/* Service Image */}
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover transition-smooth group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
 
-                {/* Hover overlay with icon */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="bg-white/90 p-3 rounded-full shadow-accent">
-                    <ArrowRight className="h-6 w-6 text-primary" />
+                  {/* Hover overlay with icon */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-white/90 p-3 rounded-full shadow-accent">
+                      <ArrowRight className="h-6 w-6 text-primary" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Service Content */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-montserrat font-semibold text-foreground group-hover:text-accent transition-smooth">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
+                {/* Service Content */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-montserrat font-semibold text-foreground group-hover:text-[#ff5457] transition-smooth">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
 
-                {/* Read More Link */}
-                <div className="pt-2">
-                  <Link
-                    to="/services"
-                    className="inline-flex items-center text-accent font-inter font-medium hover:text-accent-light transition-smooth group"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 transition-smooth group-hover:translate-x-1" />
-                  </Link>
+                  {/* Read More Link */}
+                  <div className="pt-2">
+                    <Link
+                      to="/services"
+                      className="inline-flex items-center text-[#ff5457] font-inter font-medium hover:text-accent-light transition-smooth group"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4 transition-smooth group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
 
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-accent/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-accent/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

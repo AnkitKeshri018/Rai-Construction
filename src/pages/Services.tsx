@@ -186,7 +186,7 @@ const Services = () => {
                               key={featureIndex}
                               className="flex items-center space-x-3"
                             >
-                              <Check className="h-5 w-5 text-accent flex-shrink-0" />
+                              <Check className="h-5 w-5 text-[#fd5457] flex-shrink-0" />
                               <span className="text-muted-foreground">
                                 {feature}
                               </span>
@@ -197,7 +197,7 @@ const Services = () => {
 
                       {/* Benefits */}
                       <div className="bg-muted-light/20 rounded-lg p-6">
-                        <h4 className="font-montserrat font-semibold text-accent mb-3">
+                        <h4 className="font-montserrat font-semibold text-[#fd5457]  mb-3">
                           Key Benefits:
                         </h4>
                         <p className="text-muted-foreground leading-relaxed">
@@ -205,7 +205,7 @@ const Services = () => {
                         </p>
                       </div>
 
-                      <Button asChild className="btn-construction">
+                      <Button asChild className="bg-[#fd5457]">
                         <Link to="/contact">
                           Get Started <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -219,7 +219,7 @@ const Services = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-steel text-white">
+        <section className="py-20  text-white bg-[#3d3d3d]">
           <div className="container mx-auto px-4">
             <div
               className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-1000 ${
@@ -237,10 +237,13 @@ const Services = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="btn-construction text-lg px-8 py-4"
+                  className="bg-[#fd5457] text-lg px-8 py-4"
                 >
                   <Link to="/contact">
-                    Get Free Consultation{" "}
+                    <span className="text-white">
+                      {" "}
+                      Get Free Consultation{" "}
+                    </span>
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

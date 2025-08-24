@@ -31,7 +31,7 @@ const Hero = () => {
   >
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold leading-tight italic mb-6 text-white animate-fade-in">
       Where Ideas Take Shape –{" "}
-      <span className="bg-gradient-to-r from-[#ff5457] to-orange-600 bg-clip-text text-transparent font-extrabold animate-pulse-slow">
+      <span className="bg-[#ff5457] bg-clip-text text-transparent font-extrabold animate-pulse-slow">
         Complete Construction Consultancy
       </span>{" "}
       Under One Roof!

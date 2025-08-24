@@ -170,7 +170,7 @@ const Projects = () => {
                         <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-500"></div>
 
                         {/* Category Badge */}
-                        <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <div className="absolute top-4 left-4 bg-[#fd5457] backdrop-blur-sm px-3 py-1 rounded-full">
                           <span className="text-sm font-inter font-medium text-white">
                             {project.category}
                           </span>
@@ -192,15 +192,15 @@ const Projects = () => {
                         {/* Project Meta */}
                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
                           <div className="flex items-center space-x-2">
-                            <MapPin className="h-4 w-4 text-accent" />
+                            <MapPin className="h-4 w-4 text-[#fd5457] " />
                             <span>{project.location}</span>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <Calendar className="h-4 w-4 text-accent" />
+                            <Calendar className="h-4 w-4 text-[#fd5457]" />
                             <span>{project.year}</span>
                           </div>
                           <div className="flex items-center space-x-2">
-                            <Users className="h-4 w-4 text-accent" />
+                            <Users className="h-4 w-4 text-[#fd5457]" />
                             <span>{project.client}</span>
                           </div>
                         </div>
@@ -231,7 +231,7 @@ const Projects = () => {
                         </div>
                       </div>
 
-                      <Button asChild className="btn-construction">
+                      <Button asChild className="bg-[#3d3d3d] hover:bg-[#fd5457]">
                         <Link to="/contact">
                           Start Similar Project{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -246,7 +246,7 @@ const Projects = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-steel text-white">
+        <section className="py-20 bg-[#3d3d3d] text-white">
           <div className="container mx-auto px-4">
             <div
               className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-1000 ${
@@ -264,7 +264,7 @@ const Projects = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="btn-construction text-lg px-8 py-4"
+                  className="bg-[#fd5457] text-lg px-8 py-4"
                 >
                   <Link to="/contact">
                     Start Your Project <ArrowRight className="ml-2 h-5 w-5" />

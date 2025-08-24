@@ -190,7 +190,7 @@ const BlogPage = () => {
                 )}
 
                 <div>
-                  <h2 className="text-3xl font-bold text-foreground mb-6 leading-tight">
+                  <h2 className="text-3xl font-bold text-[#fd5457] mb-6 leading-tight">
                     {post.title}
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -205,7 +205,7 @@ const BlogPage = () => {
                       >
                         <div className="w-2 h-2 bg-construction-red rounded-full mt-2"></div>
                         <div>
-                          <span className="font-semibold text-construction-neutral">
+                          <span className=" text-bold text-[#3d3d3d] font-bold">
                             {item.title}:
                           </span>{" "}
                           <span className="text-muted-foreground">

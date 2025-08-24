@@ -295,22 +295,21 @@ const AboutUs = () => {
                 className="w-full h-auto rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300"
               />
             </div>
-
             <div className="grid md:grid-cols-2 gap-6">
               {whyChooseUsItems.map((item, index) => (
                 <div
                   key={item.title}
                   id={`why-choose-${index}`}
                   data-animate
-                  className={`text-center p-6 transition-all duration-700 ${
+                  className={`group text-center p-6 transition-all duration-700 ${
                     isVisible[`why-choose-${index}`]
                       ? "animate-fade-in-right"
                       : "opacity-0"
                   }`}
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-8 h-8 text-primary" />
+                  <div className="bg-[#3d3d3d]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300 group-hover:bg-[#ff5457]/10">
+                    <item.icon className="w-8 h-8 text-[#3d3d3d] group-hover:text-[#ff5457] transition-colors duration-300 group-hover:scale-110" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {item.title}
@@ -413,7 +412,7 @@ const AboutUs = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                className="bg-[#ff5457] text-primary hover:bg-[#3d3d3d]"
+                className="bg-[#ff5457] text-white hover:bg-[#3d3d3d]"
               >
                 Get in Touch
               </Button>
