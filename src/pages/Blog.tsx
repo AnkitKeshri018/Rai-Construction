@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import three from "@/assets/threedmodel.jpg";
-import scan from "@/assets/sacn.jpg";
+import three from "@/assets/threedmodel.webp";
+import scan from "@/assets/sacn.webp";
 import luxury from "@/assets/luxury.webp";
 
 
@@ -40,7 +40,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="bg-background w-full mt-12 p-0">
+    <div className="bg-background w-full mt-18 pt-16">
       <Header />
 
       {/* 🔥 Blog Intro Section */}

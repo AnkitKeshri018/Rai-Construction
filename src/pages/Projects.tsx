@@ -8,6 +8,10 @@ import Footer from "@/components/Footer";
 import projectMoonstoneVilla from "@/assets/project-moonstone-villa.jpg";
 import projectTranquilCrest from "@/assets/project-tranquil-crest.jpg";
 import projectLilyfieldHouse from "@/assets/project-lilyfield-house.jpg";
+import oakridgeenclave from "@/assets/project-okridge-conclave.jpg";
+import verdantvista from "@/assets/project-verdant-vista.jpg";
+import sunsetridge from "@/assets/project-sunset-ridge residence.jpg";
+
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,7 +72,7 @@ const Projects = () => {
       title: "The Oakridge Enclave",
       description:
         "A contemporary residential complex that blends simplicity, functionality, and elegance, featuring natural materials and open layouts for modern living.",
-      image: projectMoonstoneVilla, // Update this variable to your actual image import
+      image: oakridgeenclave, // Update this variable to your actual image import
       category: "Residential Modern",
       location: "Austin, TX",
       year: "2024",
@@ -85,7 +89,7 @@ const Projects = () => {
       title: "Verdant Vista",
       description:
         "A sophisticated urban building with balanced design and expansive windows, offering a perfect blend of functionality and aesthetic appeal.",
-      image: projectMoonstoneVilla, // Update this variable to your actual image import
+      image: verdantvista, // Update this variable to your actual image import
       category: "Urban Architecture",
       location: "Seattle, WA",
       year: "2023",
@@ -102,7 +106,7 @@ const Projects = () => {
       title: "Sunset Ridge Residence",
       description:
         "A bold architectural masterpiece with an angular layout and striking color palette, combining openness and privacy in a lakeside setting.",
-      image: projectMoonstoneVilla, // Update this variable to your actual image import
+      image: sunsetridge, // Update this variable to your actual image import
       category: "Luxury Residential",
       location: "Lake Tahoe, CA",
       year: "2024",
@@ -130,7 +134,8 @@ const Projects = () => {
               }`}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6">
-                Our <span className="text-[#ff5457]">Project Portfolio</span>
+                Our <span className="text-[#ff5457]">Dream </span>
+                Projects
               </h1>
               <p className="text-xl text-muted-light leading-relaxed">
                 Discover our exceptional construction projects that showcase

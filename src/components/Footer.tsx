@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.jpg"
 import {
   Building2,
   MapPin,
@@ -46,9 +47,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <Building2 className="h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 text-[#ff5457]" />
-              <span className="text-xl font-montserrat font-bold">
+            <Link
+              to="/"
+              className="flex items-center space-x-2 text-xl font-bold text-white hover:scale-105 transition-transform"
+            >
+              <img
+                src={logo}
+                alt="Rai Construction Logo"
+                className="h-10 w-10 object-contain " // adjust size and shape as needed
+              />
+              <span
+                className={`font-montserrat font-bold text-sm md:text-base lg:text-lg whitespace-nowrap truncate text-[#fd5457]`}
+              >
                 Rai Construction Solutions
               </span>
             </Link>
@@ -62,13 +72,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-[#ff5457] flex-shrink-0" />
-                <span className="text-sm">
-                  123 Construction Ave, Building City, BC 12345
-                </span>
+                <span className="text-sm">Jodhpur, Rajasthan, India</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#ff5457] flex-shrink-0" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+91 9588848557</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#ff5457] flex-shrink-0" />

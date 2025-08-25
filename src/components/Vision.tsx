@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Target, Lightbulb, Eye, Cog, Award, Zap } from "lucide-react";
-import vision from "@/assets/Vision.jpg"
+import vision from "@/assets/Vision.webp"
 
 
 const Vision = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import three from "@/assets/threedmodel.jpg";
-import scan from "@/assets/sacn.jpg";
+import three from "@/assets/threedmodel.webp";
+import scan from "@/assets/sacn.webp";
 import luxury from "@/assets/luxury.webp";
 import { Link } from "lucide-react";
 

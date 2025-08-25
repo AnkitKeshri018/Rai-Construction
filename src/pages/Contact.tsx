@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import map from "@/assets/map.png"
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,23 +31,27 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Our Location",
-      details: ["123 Construction Avenue", "Building City, BC 12345", "United States"]
+      details: ["Jodhpur, Rajasthan, India"],
     },
     {
       icon: Phone,
-      title: "Phone Numbers",
-      details: ["+1 (555) 123-4567", "+1 (555) 765-4321", "Toll Free: 1-800-RAI-CONST"]
+      title: "Phone Number",
+      details: ["+91 9588848557"],
     },
     {
       icon: Mail,
-      title: "Email Addresses",
-      details: ["info@raiconstruction.com", "projects@raiconstruction.com", "support@raiconstruction.com"]
+      title: "Email Address",
+      details: ["info@raiconstruction.com"],
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"]
-    }
+      details: [
+        "Monday - Friday: 9:00 AM - 6:00 PM",
+        "Saturday: 10:00 AM - 4:00 PM",
+        "Sunday: Closed",
+      ],
+    },
   ];
 
   const services = [
@@ -177,13 +182,28 @@ const Contact = () => {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="construction-card bg-muted-light/20 h-64 flex items-center justify-center">
-                  <div className="text-center text-[#fd5457]">
-                    <MapPin className="h-12 w-12 mx-auto mb-4 text-accent" />
-                    <p className="font-medium">Interactive Map</p>
-                    <p className="text-sm">Visit our office location</p>
+                <a
+                  href="https://maps.app.goo.gl/TH6LTyEhuTTNs18a8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="construction-card bg-muted-light/20 h-64 flex flex-col items-center justify-center cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-all duration-300 rounded-xl overflow-hidden">
+                    {/* Map Image (Preview) */}
+                    <img
+                      src={map} // <-- replace with your map image path
+                      alt="Office Location Map"
+                      className="w-full h-32 object-cover"
+                    />
+
+                    {/* Content */}
+                    <div className="text-center text-[#fd5457] p-4">
+                      <MapPin className="h-12 w-12 mx-auto mb-2 text-accent" />
+                      <p className="font-medium">Interactive Map</p>
+                      <p className="text-sm">Visit our office location</p>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
 
               {/* Contact Form */}
@@ -269,11 +289,12 @@ const Contact = () => {
                         </label>
                         <Select
                           value={formData.service}
+                          className="bg-[#fd5457]"
                           onValueChange={(value) =>
                             handleInputChange("service", value)
                           }
                         >
-                          <SelectTrigger className="w-full">
+                          <SelectTrigger className="w-full ">
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                           <SelectContent>
@@ -360,7 +381,7 @@ const Contact = () => {
                   className="bg-[#fd5457] text-lg px-8 py-4"
                 >
                   <a href="tel:+15551234567">
-                    <Phone className="mr-2 h-5 w-5" /> Call Now: (555) 123-4567
+                    <Phone className="mr-2 h-5 w-5" /> Call Now: +91  9588848557
                   </a>
                 </Button>
                 <Button

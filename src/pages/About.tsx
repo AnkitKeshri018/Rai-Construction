@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 import aboutHero from "@/assets/project-moonstone-villa.jpg";
 import whyChooseUs from "@/assets/project-tranquil-crest.jpg";
-import about from "@/assets/about.jpg"
-import chose from "@/assets/chose.webp"
+import about from "@/assets/about.webp"
+import chose from "@/assets/chose.jpg"
 
 
 const AboutUs = () => {

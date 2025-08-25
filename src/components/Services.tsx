@@ -11,17 +11,21 @@ import serviceInteriorDesign from "@/assets/service-interior-design.jpg";
 import serviceQuantityTakeoff from "@/assets/service-quantity-takeoff.jpg";
 
 const Services = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
+  // Show immediately on mobile screens (<768px), else false
+  const [isVisible, setIsVisible] = useState(window.innerWidth < 768);
+
   useEffect(() => {
+    if (isVisible) return; // already visible on mobile
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" } // triggers earlier on mobile
     );
 
     if (sectionRef.current) {
@@ -29,45 +33,51 @@ const Services = () => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isVisible]);
 
   const services = [
     {
       title: "BIM 3D Modeling",
-      description: "Enhance project accuracy with intelligent 3D models integrating architectural, structural, and MEP components for seamless planning and execution.",
+      description:
+        "Enhance project accuracy with intelligent 3D models integrating architectural, structural, and MEP components for seamless planning and execution.",
       image: service3DModeling,
-      delay: "0ms"
+      delay: "0ms",
     },
     {
-      title: "Construction Documents", 
-      description: "Comprehensive architectural, structural, and MEP plans ensuring compliance, minimizing errors, and improving project execution.",
+      title: "Construction Documents",
+      description:
+        "Comprehensive architectural, structural, and MEP plans ensuring compliance, minimizing errors, and improving project execution.",
       image: serviceConstructionDocs,
-      delay: "200ms"
+      delay: "200ms",
     },
     {
       title: "Scan to BIM",
-      description: "Convert laser scan data into accurate BIM models for renovation, retrofits, and as-built documentation, improving precision and efficiency.",
+      description:
+        "Convert laser scan data into accurate BIM models for renovation, retrofits, and as-built documentation, improving precision and efficiency.",
       image: serviceScanToBim,
-      delay: "400ms"
+      delay: "400ms",
     },
     {
       title: "Renders & Walkthroughs",
-      description: "Experience projects before construction with high-quality 3D renders and interactive walkthroughs for better visualization and decision-making.",
+      description:
+        "Experience projects before construction with high-quality 3D renders and interactive walkthroughs for better visualization and decision-making.",
       image: service3DRenders,
-      delay: "600ms"
+      delay: "600ms",
     },
     {
       title: "Interior Designing",
-      description: "Transform spaces with creative designs, functional layouts, and aesthetic enhancements tailored to residential and commercial needs.",
+      description:
+        "Transform spaces with creative designs, functional layouts, and aesthetic enhancements tailored to residential and commercial needs.",
       image: serviceInteriorDesign,
-      delay: "800ms"
+      delay: "800ms",
     },
     {
       title: "Quantity Take-Off",
-      description: "Accurate estimation of materials and costs using BIM and detailed drawings, ensuring optimized resource allocation and cost efficiency.",
+      description:
+        "Accurate estimation of materials and costs using BIM and detailed drawings, ensuring optimized resource allocation and cost efficiency.",
       image: serviceQuantityTakeoff,
-      delay: "1000ms"
-    }
+      delay: "1000ms",
+    },
   ];
 
   return (
@@ -92,9 +102,8 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <Link to="/services">
+            <Link key={index} to="/services">
               <div
-                key={index}
                 className={`service-card group transition-all duration-1000 ${
                   isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
@@ -105,7 +114,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover transition-smooth group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
 

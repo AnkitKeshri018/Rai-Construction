@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import construction from "@/assets/construction.jpg";
+import construction from "@/assets/construction.webp";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
