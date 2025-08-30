@@ -100,11 +100,11 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 items-stretch">
           {services.map((service, index) => (
             <Link key={index} to="/services">
               <div
-                className={`service-card group transition-all duration-1000 ${
+                className={`service-card group transition-all duration-1000 h-full flex flex-col ${
                   isVisible ? "animate-fade-in-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: isVisible ? service.delay : "0ms" }}

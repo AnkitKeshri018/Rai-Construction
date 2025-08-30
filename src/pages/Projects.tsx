@@ -12,7 +12,6 @@ import oakridgeenclave from "@/assets/project-okridge-conclave.jpg";
 import verdantvista from "@/assets/project-verdant-vista.jpg";
 import sunsetridge from "@/assets/project-sunset-ridge residence.jpg";
 
-
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -22,7 +21,13 @@ const Projects = () => {
     document.title = "Our Projects - Rai Construction Solutions";
   }, []);
 
-  const categories = ["All", "Luxury Residential", "Commercial", "Heritage Modern", "Urban Contemporary"];
+  const categories = [
+    "All",
+    "Luxury Residential",
+    "Commercial",
+    "Heritage Modern",
+    "Urban Contemporary",
+  ];
 
   const projects = [
     {
@@ -72,7 +77,7 @@ const Projects = () => {
       title: "The Oakridge Enclave",
       description:
         "A contemporary residential complex that blends simplicity, functionality, and elegance, featuring natural materials and open layouts for modern living.",
-      image: oakridgeenclave, // Update this variable to your actual image import
+      image: oakridgeenclave,
       category: "Residential Modern",
       location: "Austin, TX",
       year: "2024",
@@ -89,7 +94,7 @@ const Projects = () => {
       title: "Verdant Vista",
       description:
         "A sophisticated urban building with balanced design and expansive windows, offering a perfect blend of functionality and aesthetic appeal.",
-      image: verdantvista, // Update this variable to your actual image import
+      image: verdantvista,
       category: "Urban Architecture",
       location: "Seattle, WA",
       year: "2023",
@@ -106,7 +111,7 @@ const Projects = () => {
       title: "Sunset Ridge Residence",
       description:
         "A bold architectural masterpiece with an angular layout and striking color palette, combining openness and privacy in a lakeside setting.",
-      image: sunsetridge, // Update this variable to your actual image import
+      image: sunsetridge,
       category: "Luxury Residential",
       location: "Lake Tahoe, CA",
       year: "2024",
@@ -117,9 +122,10 @@ const Projects = () => {
     },
   ];
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <div className="min-h-screen">
@@ -173,13 +179,6 @@ const Projects = () => {
                           className="w-full h-96 object-cover rounded-xl shadow-construction group-hover:shadow-accent transition-smooth"
                         />
                         <div className="absolute inset-0 bg-gradient-construction opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-500"></div>
-
-                        {/* Category Badge */}
-                        <div className="absolute top-4 left-4 bg-[#fd5457] backdrop-blur-sm px-3 py-1 rounded-full">
-                          <span className="text-sm font-inter font-medium text-white">
-                            {project.category}
-                          </span>
-                        </div>
                       </div>
                     </div>
 
@@ -236,7 +235,10 @@ const Projects = () => {
                         </div>
                       </div>
 
-                      <Button asChild className="bg-[#3d3d3d] hover:bg-[#fd5457]">
+                      <Button
+                        asChild
+                        className="bg-[#3d3d3d] hover:bg-[#fd5457]"
+                      >
                         <Link to="/contact">
                           Start Similar Project{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />

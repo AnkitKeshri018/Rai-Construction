@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpg"
+import logo from "@/assets/logo.png"
 import {
   Building2,
   MapPin,
@@ -76,7 +76,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-[#ff5457] flex-shrink-0" />
-                <span className="text-sm">+91 9588848557</span>
+                <span className="text-sm">+91 8003431008</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#ff5457] flex-shrink-0" />

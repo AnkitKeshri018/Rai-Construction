@@ -198,9 +198,9 @@ const Testimonials = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { label: "Client Satisfaction", value: "98%" },
-              { label: "Projects Delivered", value: "500+" },
-              { label: "Expert Team Members", value: "25+" },
-              { label: "Years of Excellence", value: "15+" },
+              { label: "Projects Delivered", value: "35+" },
+              { label: "Expert Team Members", value: "5+" },
+              { label: "Years of Excellence", value: "4+" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl md:text-3xl font-montserrat font-bold text-[#ff5457] mb-2">

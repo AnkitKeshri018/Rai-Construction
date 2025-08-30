@@ -31,25 +31,25 @@ const Projects = () => {
   const projects = [
     {
       title: "Moonstone Villa",
-      description: "A stunning modern architectural masterpiece blending contemporary aesthetics with natural textures.",
+      description:
+        "A stunning modern architectural masterpiece blending contemporary aesthetics with natural textures.",
       image: projectMoonstoneVilla,
-      category: "Luxury Residential",
-      delay: "0ms"
+      delay: "0ms",
     },
     {
-      title: "Tranquil Crest", 
-      description: "A blend of modern sophistication with classical charm, featuring arched windows and ornamental patterns.",
+      title: "Tranquil Crest",
+      description:
+        "A blend of modern sophistication with classical charm, featuring arched windows and ornamental patterns.",
       image: projectTranquilCrest,
-      category: "Heritage Modern",
-      delay: "200ms"
+      delay: "200ms",
     },
     {
       title: "Lilyfield House",
-      description: "A modern townhouse with a clean geometric façade, integrating natural wood and glass elements.",
+      description:
+        "A modern townhouse with a clean geometric façade, integrating natural wood and glass elements.",
       image: projectLilyfieldHouse,
-      category: "Urban Contemporary",
-      delay: "400ms"
-    }
+      delay: "400ms",
+    },
   ];
 
   return (
@@ -100,13 +100,6 @@ const Projects = () => {
                       </p>
                     </Link>
                   </div>
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-[#ff5457] backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="text-xs font-inter font-medium text-white">
-                    {project.category}
-                  </span>
                 </div>
               </div>
 

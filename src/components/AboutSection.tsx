@@ -121,7 +121,7 @@ const AboutSection = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.2 + 0.6}s` }}
               >
-                <strong className="text-[#ff5457] hover:underline transition-all duration-300">
+                <strong className="text-[#ff5457]  transition-all duration-300">
                   {item.title}
                 </strong>{" "}
                 {item.desc}

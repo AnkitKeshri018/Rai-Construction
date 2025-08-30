@@ -105,7 +105,7 @@ const Vision = () => {
               .
             </p>
 
-            <p className="text-base leading-relaxed">
+            <p className="text-lg leading-relaxed">
               Our commitment is to{" "}
               <span className="text-[#ff5457] font-semibold">
                 innovation, quality, and client satisfaction
