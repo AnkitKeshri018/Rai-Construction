@@ -376,8 +376,8 @@ const Contact = () => {
                   size="lg"
                   className="bg-[#fd5457] text-lg px-8 py-4"
                 >
-                  <a href="tel:+15551234567">
-                    <Phone className="mr-2 h-5 w-5" /> Call Now: +91  9588848557
+                  <a href="tel:+918003431008">
+                    <Phone className="mr-2 h-5 w-5" /> Call Now: +91 8003431008
                   </a>
                 </Button>
                 <Button

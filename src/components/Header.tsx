@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import white from "@/assets/logo-white.png"
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,12 +49,13 @@ const Header = () => {
             className="flex items-center space-x-2 sm:space-x-3 min-w-0 hover:scale-105 transition-transform"
           >
             <img
-              src={logo}
+              src={isHome && !scrolled ? white : logo} // white logo in hero section, colored logo otherwise
               alt="Rai Construction Logo"
               className="h-16 sm:h-16 md:h-16 lg:h-16 w-auto object-contain flex-shrink-0"
             />
+
             <span
-              className={`font-montserrat font-bold text-[15px] sm:text-[17px] md:text-[20px] lg:text-[20px] whitespace-nowrap ${textColor}`}
+              className={`font-montserrat text-[#fd5457] font-bold text-[15px] sm:text-[17px] md:text-[20px] lg:text-[20px] whitespace-nowrap`}
             >
               Rai Construction Solutions
             </span>

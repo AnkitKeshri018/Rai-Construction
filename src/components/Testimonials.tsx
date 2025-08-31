@@ -195,9 +195,9 @@ const Testimonials = () => {
             isVisible ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {[
-              { label: "Client Satisfaction", value: "98%" },
+             
               { label: "Projects Delivered", value: "35+" },
               { label: "Expert Team Members", value: "5+" },
               { label: "Years of Excellence", value: "4+" },

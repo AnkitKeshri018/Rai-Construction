@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png"
+import white from "@/assets/logo-white.png"
 import {
   Building2,
   MapPin,
@@ -32,12 +33,39 @@ const Footer = () => {
     "Interior Designing",
     "Quantity Take-Off",
   ];
-
+  
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    {
+      icon: () => (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="h-5 w-5"
+        >
+          <path
+            d="M3 3L21 21M3 21L21 3"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+      href: "https://x.com/raiconstsol",
+      label: "X / Twitter",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/raiconstructionsolutions/",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/raiconstructionsolutions/",
+      label: "Instagram",
+    },
   ];
 
   return (
@@ -52,12 +80,12 @@ const Footer = () => {
               className="flex items-center space-x-2 text-xl font-bold text-white hover:scale-105 transition-transform"
             >
               <img
-                src={logo}
+                src={white}
                 alt="Rai Construction Logo"
-                className="h-10 w-10 object-contain " // adjust size and shape as needed
+                className="h-12 w-12 object-contain " // adjust size and shape as needed
               />
               <span
-                className={`font-montserrat font-bold text-sm md:text-base lg:text-lg whitespace-nowrap truncate text-[#fd5457]`}
+                className={`font-montserrat font-bold text-base md:text-base lg:text-[17px] whitespace-nowrap truncate text-[#fd5457]`}
               >
                 Rai Construction Solutions
               </span>
@@ -84,7 +112,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="h-5 w-5 text-[#ff5457] flex-shrink-0" />
-                <span className="text-sm">Mon - Fri: 9:00 AM - 6:00 PM</span>
+                <span className="text-sm">Mon - Sat: 9:00 AM - 6:00 PM</span>
               </div>
             </div>
           </div>
@@ -142,11 +170,46 @@ const Footer = () => {
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
-                  href={social.href}
-                  className="p-2 bg-primary-foreground/10 hover:bg-[#ff5457] hover:scale-110 transition-smooth rounded-lg group"
+                  href={
+                    social.href && !social.href.includes("#")
+                      ? social.href
+                      : "#"
+                  }
+                  target={
+                    social.href && !social.href.includes("#")
+                      ? "_blank"
+                      : "_self"
+                  }
+                  rel={
+                    social.href && !social.href.includes("#")
+                      ? "noopener noreferrer"
+                      : ""
+                  }
+                  title={
+                    social.href && !social.href.includes("#")
+                      ? social.label
+                      : "Coming Soon"
+                  }
+                  onClick={(e) => {
+                    if (!social.href || social.href.includes("#")) {
+                      e.preventDefault(); // stop navigating
+                      alert("Coming Soon!"); // optional pop-up for clarity
+                    }
+                  }}
+                  className={`p-2 bg-primary-foreground/10 hover:bg-[#ff5457] hover:scale-110 transition-smooth rounded-lg group ${
+                    social.href && !social.href.includes("#")
+                      ? ""
+                      : "cursor-not-allowed"
+                  }`}
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5 text-primary-foreground/80 group-hover:text-white" />
+                  <social.icon
+                    className={`h-5 w-5 ${
+                      social.href && !social.href.includes("#")
+                        ? "text-primary-foreground/80 group-hover:text-white"
+                        : "text-gray-500"
+                    }`}
+                  />
                 </a>
               ))}
             </div>

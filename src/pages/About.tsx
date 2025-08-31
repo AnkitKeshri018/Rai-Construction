@@ -156,7 +156,7 @@ const AboutUs = () => {
             >
               <p className="text-lg text-foreground">
                 Welcome to{" "}
-                <span className="text-primary font-semibold">
+                <span className="text-[#fd5457] font-semibold">
                   Rai Construction Solutions
                 </span>{" "}
                 – Your trusted partner in construction excellence.
@@ -382,8 +382,10 @@ const AboutUs = () => {
               <p className="font-semibold text-foreground text-lg">
                 Sincerely,
               </p>
-              <p className="font-bold text-primary text-xl mt-2">Mrinal Rai</p>
-              <p className="text-muted-foreground">
+              <p className="font-bold text-[#fd5457] text-xl mt-2">
+                Mrinal Rai
+              </p>
+              <p className=" text-[#fd5457]">
                 Founder, Rai Construction Solutions
               </p>
             </div>
